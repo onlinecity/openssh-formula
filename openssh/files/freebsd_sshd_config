@@ -64,7 +64,7 @@
 # ---------------------------------------------------------------------------
 
 {{ option('Port' 22) }}
-{{ option('AddressFamiliy', 'any') }}
+{{ option('AddressFamily', 'any') }}
 {{ option('ListenAddress', ['0.0.0.0', '::']) }}
 
 # The default requires explicit activation of protocol 1
