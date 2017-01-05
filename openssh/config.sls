@@ -10,6 +10,7 @@ sshd_config:
     - template: jinja
     - user: root
     - mode: 644
+    - backup: minion
     - watch_in:
       - service: openssh
 
@@ -20,6 +21,7 @@ ssh_config:
     - template: jinja
     - user: root
     - mode: 644
+    - backup: minion
 
 {% for keyType in ['ecdsa', 'dsa', 'rsa', 'ed25519'] %}
 {% if salt['pillar.get']('openssh:generate_' ~ keyType ~ '_keys', False) %}
