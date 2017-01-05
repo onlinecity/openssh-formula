@@ -172,7 +172,7 @@
 
 # override default of no subsystems
 {{ option_default_uncommented('Subsystem', 'sftp /usr/lib/openssh/sftp-server') }}
-
+{# ----------------------------------------- #}
 {# Handling unknown in salt template options #}
 {%- for keyword in sshd_config.keys() %}
   {#- Matches have to be at the bottom and should be handled differently -#}
@@ -181,7 +181,6 @@
 {{ render_option(keyword, '') }}
   {%- endif -%}
 {%- endfor %}
-
 {# Handle matches last as they need to go at the bottom #}
 {%- if 'matches' in sshd_config %}
   {%- for match in sshd_config['matches'].values() %}
